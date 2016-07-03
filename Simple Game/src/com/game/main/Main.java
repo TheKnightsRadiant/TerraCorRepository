@@ -32,12 +32,16 @@ public class Main extends JComponent implements ActionListener{
 	
 	
 	protected void paintComponent(Graphics g) {
+		
+		//Background
 		g.setColor(Color.black);
 		g.fillRect(0, 0, 800, 600);
 		
+		//Circle
 		g.setColor(color);
 		g.fillOval(375, 275, 50, 50);
 		
+		//Text
 		g.setFont(new Font(Font.DIALOG, Font.BOLD, 18));
 		g.drawString("This is a " + colorString + " circle.", 315, 400);
 	}
