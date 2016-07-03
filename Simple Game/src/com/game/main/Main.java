@@ -11,6 +11,7 @@ public class Main extends JComponent implements ActionListener{
 	int timer = 0;
 	String colorString = "red";
 	Color color = Color.red;
+	Color backgroundColor = Color.green;
 	
 	
 	public static void main(String[] args) {
@@ -34,7 +35,7 @@ public class Main extends JComponent implements ActionListener{
 	protected void paintComponent(Graphics g) {
 		
 		//Background
-		g.setColor(Color.black);
+		g.setColor(backgroundColor);
 		g.fillRect(0, 0, 800, 600);
 		
 		//Circle
@@ -55,10 +56,12 @@ public class Main extends JComponent implements ActionListener{
 		
 		if (timer == 25) {
 			color = Color.green;
+			backgroundColor = Color.red;
 			colorString = "green";
 		}
 		if (timer == 50) {
 			color = Color.red;
+			backgroundColor = Color.green;
 			colorString = "red";
 			timer = 0;
 		}
