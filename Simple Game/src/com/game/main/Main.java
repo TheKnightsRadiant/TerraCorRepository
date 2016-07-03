@@ -9,7 +9,6 @@ public class Main extends JComponent implements ActionListener{
 
 	//Variables
 	int timer = 0;
-	String colorString = "red";
 	Color color = Color.red;
 	Color backgroundColor = Color.green;
 	
@@ -52,15 +51,14 @@ public class Main extends JComponent implements ActionListener{
 		if (timer == 5) {
 			color = Color.green;
 			backgroundColor = Color.red;
-			colorString = "green";
 		}
 		if (timer == 10) {
 			color = Color.red;
 			backgroundColor = Color.green;
-			colorString = "red";
+
 			timer = 0;
-		}
 		
+		}
 		repaint();
 	}
 
