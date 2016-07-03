@@ -44,6 +44,9 @@ public class Main extends JComponent implements ActionListener{
 		//Text
 		g.setFont(new Font(Font.DIALOG, Font.BOLD, 18));
 		g.drawString("This is a " + colorString + " circle.", 315, 400);
+		
+		//Text Splitting
+		drawString(g, "This is a\ntest.", 50, 50);
 	}
 
 	
@@ -62,5 +65,11 @@ public class Main extends JComponent implements ActionListener{
 		
 		repaint();
 	}
+	
+	
+	private void drawString(Graphics g, String text, int x, int y) {
+        for (String line : text.split("\n"))
+            g.drawString(line, x, y += g.getFontMetrics().getHeight());
+    }
 
 }
