@@ -24,7 +24,7 @@ public class Main extends JComponent implements ActionListener{
 		window.setLocationRelativeTo(null);
 		window.setVisible(true);
 		
-		Timer t = new Timer(30, game);
+		Timer t = new Timer(10, game);
 		t.start();
 	}
 	public Dimension getPreferredSize() {
@@ -40,26 +40,21 @@ public class Main extends JComponent implements ActionListener{
 		
 		//Circle
 		g.setColor(color);
-		g.fillOval(375, 275, 50, 50);
-		
-		//Text
-		g.setFont(new Font(Font.DIALOG, Font.BOLD, 18));
-		g.drawString("This is a " + colorString + " circle.", 315, 400);
-		
-		//Text Splitting
-		drawString(g, "This is a\ntest.", 50, 50);
+		for (int x = 5; x <= 745; x+=100)
+			for (int y = 5; y <= 545; y+= 100)
+				g.fillOval(x, y, 50, 50);
 	}
 
 	
 	public void actionPerformed(ActionEvent e) {
 		timer++;
 		
-		if (timer == 25) {
+		if (timer == 5) {
 			color = Color.green;
 			backgroundColor = Color.red;
 			colorString = "green";
 		}
-		if (timer == 50) {
+		if (timer == 10) {
 			color = Color.red;
 			backgroundColor = Color.green;
 			colorString = "red";
@@ -68,11 +63,5 @@ public class Main extends JComponent implements ActionListener{
 		
 		repaint();
 	}
-	
-	
-	private void drawString(Graphics g, String text, int x, int y) {
-        for (String line : text.split("\n"))
-            g.drawString(line, x, y += g.getFontMetrics().getHeight());
-    }
 
 }
