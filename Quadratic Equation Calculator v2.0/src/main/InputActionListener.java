@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class InputActionListener implements ActionListener {
-
+//
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == "Calculate") {
